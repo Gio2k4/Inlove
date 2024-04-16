@@ -1,309 +1,614 @@
-
 <!DOCTYPE html>
 <html class='v2' dir='ltr' lang='vi' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
-    <head>
-        <title>Day Love</title>
-<meta content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' name='viewport'/>
-<link href='https://i.imgur.com/IOJZUo1.png' rel='shortcut icon' type='image/x-icon'/>
-<style id='page-skin-1' type='text/css'>
 
-/* Chèn CSS vào đây */
-/*----------------------------------*/
-/* Name: nvp                       */
-/* Admin: nguyen van phong         */
-/* Zalo: 0705222397                */
-/* Gmail: nguyenppp2306@gmail.com   */
-/* Website:https://nphong.space*/
-/*----------------------------------*/
-html,body{cursor:url("https://1.bp.blogspot.com/-qbWo9mPKO2Y/YL9utYdQBdI/AAAAAAAAFs4/mtjGu6u2uGwtJsT4gZG4lbhLV1a5lG6OQCLcBGAsYHQ/s0/mouse-f1.png"), auto;}a:hover{cursor:url("https://1.bp.blogspot.com/-nYv2dLl3oXY/YL9utYBCh8I/AAAAAAAAFtA/wII4lVw5w4k-4isGMY41heTqk8U4TJujgCLcBGAsYHQ/s0/mouse-f2.png"), auto;}html,body{background-color:#f6f6f6;margin:0;padding:0}img{max-width:100%}body{display:grid;font-family:"Segoe UI",sans-serif;grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(auto,auto);color:#3e3e3e;text-shadow:.4px .4px .4px rgba(0,0,0,.2)}h1{font-weight:lighter;grid-column:span 3;text-align:center;color:#ec407a}#wrapper{display:grid;grid-column:3 / 11;grid-template-columns:repeat(3,1fr);grid-auto-rows:minmax(auto,auto);grid-row-gap:10px;margin-top:3.6rem}#clock-box,#info{grid-column:span 3;display:grid;grid-template-columns:repeat(12,1fr)}#clock-box #clock{grid-column:4 / 10;background-color:#F8C8C8;padding:.6rem 2rem;padding-top:.8rem;text-align:center;font-size:2.4rem;border-radius:10rem}date,time{display:block}date{font-size:18px}time{font-family:"Arial",sans-serif;line-height:3.2rem;letter-spacing:2px}.avt{width:160px;height:160px;border-radius:50%;box-shadow:2px 2px 8px rgba(0,0,0,.2)}#info{margin-top:2.6rem}#heart{grid-column:span 2;display:grid;grid-template-rows:2;font-size:44px;color:#b90d46;align-self:center;padding-bottom:2.6rem;text-align:center}anni{font-size:16px;letter-spacing:.2px}#info .one{grid-column:3 / 6;text-align:center}#info .two{grid-column:8 / 11;text-align:center}footer{grid-column:span 3;text-align:center;font-size:1.6rem;font-weight:lighter;margin-top:1.2rem}#music{grid-column:2;position:relative;z-index:1000;opacity:.4}#mask{background-image:linear-gradient(to top,#6d44cc5d 0%,#f09cd880 100%);opacity:.42;width:100vw;height:100vh;position:fixed;top:0;left:0}@media (max-width: 992px){#wrapper{grid-column:span 12}#clock-box #clock{grid-column:2 / 12}.avt{width:120px;height:120px}#info .one,#info .two{grid-column:span 12}#heart{grid-column:span 12;padding-bottom:1rem}footer{font-size:1.2rem;margin:0;padding-bottom:2rem}}#loader{position:fixed;top:0;left:0;right:0;bottom:0;background:#F0BBCB;z-index:1000}.spinner{position:fixed;width:100%;top:70%;height:30px;text-align:center;font-size:10px}.spinner,.spinner-inner{position:absolute;top:0;bottom:0;right:0;left:0;border:9px solid white;border-color:transparent white;margin:auto}.spinner{width:85px;height:85px;-webkit-animation:spin 2.2s linear 0s infinite normal;-moz-animation:spin 2.2s linear 0s infinite normal;animation:spin 2.2s linear 0s infinite normal}.spinner-inner{width:40px;height:40px;-webkit-animation:spinback 1.2s linear 0s infinite normal;-moz-animation:spinback 1.2s linear 0s infinite normal;animation:spinback 1.2s linear 0s infinite normal}@-webkit-keyframes spin{from{-webkit-transform:rotate(0)}to{-webkit-transform:rotate(360deg)}}@-moz-keyframes spin{from{-moz-transform:rotate(0)}to{-moz-transform:rotate(360deg)}}@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}@-webkit-keyframes spinback{from{-webkit-transform:rotate(0)}to{-webkit-transform:rotate(-360deg)}}@-moz-keyframes spinback{from{-moz-transform:rotate(0)}to{-moz-transform:rotate(-360deg)}}@keyframes spinback{from{transform:rotate(0)}to{transform:rotate(-360deg)}}
-
-</style>
-  <!-- Thư viện SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<head>
+    <title>Day Love</title>
+    <meta content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' name='viewport' />
+    <link href='https://i.imgur.com/IOJZUo1.png' rel='shortcut icon' type='image/x-icon' />
+    <style id='page-skin-1' type='text/css'>
+        /* Chèn CSS vào đây */
+        /*----------------------------------*/
+        /* Name: nvp                       */
+        /* Admin: nguyen van phong         */
+        /* Zalo: 0705222397                */
+        /* Gmail: nguyenppp2306@gmail.com   */
+        /* Website:https://nphong.space*/
+        /*----------------------------------*/
         
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
-<style>.--savior-overlay-transform-reset {
-    transform: none !important;
-  }
-  .--savior-overlay-z-index-top {
-    z-index: 2147483643 !important;
-  }
-  .--savior-overlay-position-relative {
-    position: relative;
-  }
-  .--savior-overlay-overflow-hidden {
-    overflow: hidden !important;
-  }
-  .--savior-overlay-overflow-x-visible {
-    overflow-x: visible !important;
-  }
-  .--savior-overlay-overflow-y-visible {
-    overflow-y: visible !important;
-  }
-  .--savior-overlay-z-index-reset {
-    z-index: auto !important;
-  }
-  .--savior-overlay-display-none {
-    display: none !important;
-  }
-  .--savior-overlay-clearfix {
-    clear: both;
-  }
-  .--savior-overlay-reset-filter {
-    filter: none !important;
-    backdrop-filter: none !important;
-  }
-  .--savior-tooltip-host {
-    z-index: 9999;
-    position: absolute;
-    top: 0;
-  }
-  /*Override css styles for Twitch.tv*/
-  main.--savior-overlay-z-index-reset {
-    z-index: auto !important;
-  }
-  main.--savior-overlay-z-index-top {
-    z-index: auto !important;
-  }
-  main.--savior-overlay-z-index-top .channel-root__player-container + div,
-  main.--savior-overlay-z-index-top .video-player-hosting-ui__container + div {
-    opacity: 0.1;
-  }
-  /*Dirty hack for facebook big video page e.g: https://www.facebook.com/abc/videos/...*/
-  .--savior-backdrop {
-    position: fixed !important;
-    z-index: 2147483642 !important;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw !important;
-    background-color: rgba(0,0,0,0.9);
-  }
-  .--savior-overlay-twitter-video-player {
-    position: fixed;
-    width: 80%;
-    height: 80%;
-    top: 10%;
-    left: 10%;
-  }
-  /* Fix conflict css with zingmp3 */
-  .zm-video-modal.--savior-overlay-z-index-reset {
-    position: absolute;
-  }
-  /* Dirty hack for xvideos99 */
-  #page #main.--savior-overlay-z-index-reset {
-    z-index: auto !important;
-  }
-  /* Overlay for ok.ru */
-  #vp_w.--savior-overlay-z-index-reset.media-layer.media-layer__video {
-    position: absolute;
-    overflow-y: hidden;
-  }
-  /* Fix missing controller for tv.naver.com */
-  .--savior-overlay-z-index-top.rmc_controller,
-  .--savior-overlay-z-index-top.rmc_setting_intro,
-  .--savior-overlay-z-index-top.rmc_highlight,
-  .--savior-overlay-z-index-top.rmc_control_settings {
-    z-index: 2147483644 !important;
-  }
-  /* Dirty hack for douyi.com */
-  .swiper-wrapper.--savior-overlay-z-index-reset .swiper-slide:not(.swiper-slide-active),
-  .swiper-wrapper.--savior-overlay-transform-reset .swiper-slide:not(.swiper-slide-active) {
-    display: none;
-  }
-  .videoWrap + div > div {
-    pointer-events: unset;
-  }
-  /* Dirty hack for fpt.ai */
-  .mfp-wrap.--savior-overlay-z-index-top {
-    position: relative;
-  }
-  .mfp-wrap.--savior-overlay-z-index-top .mfp-close {
-    display: none;
-  }
-  .mfp-wrap.--savior-overlay-z-index-top .mfp-content {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset + nav {
-    z-index: -1 !important;
-  }
-  section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset section.--savior-overlay-z-index-reset div.--savior-overlay-z-index-reset ~ div {
-    position: relative;
-  }
-  div[class^="tiktok"].--savior-overlay-z-index-reset {
-    z-index: 2147483644 !important;
-  }
-  @-moz-keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  @-webkit-keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  @-o-keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-/* Hàm hình nền */
-/* body {
+        html,
+        body {
+            cursor: url("https://1.bp.blogspot.com/-qbWo9mPKO2Y/YL9utYdQBdI/AAAAAAAAFs4/mtjGu6u2uGwtJsT4gZG4lbhLV1a5lG6OQCLcBGAsYHQ/s0/mouse-f1.png"), auto;
+        }
+        
+        a:hover {
+            cursor: url("https://1.bp.blogspot.com/-nYv2dLl3oXY/YL9utYBCh8I/AAAAAAAAFtA/wII4lVw5w4k-4isGMY41heTqk8U4TJujgCLcBGAsYHQ/s0/mouse-f2.png"), auto;
+        }
+        
+        html,
+        body {
+            background-color: #f6f6f6;
+            margin: 0;
+            padding: 0
+        }
+        
+        img {
+            max-width: 100%
+        }
+        
+        body {
+            display: grid;
+            font-family: "Segoe UI", sans-serif;
+            grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: minmax(auto, auto);
+            color: #3e3e3e;
+            text-shadow: .4px .4px .4px rgba(0, 0, 0, .2)
+        }
+        
+        h1 {
+            font-weight: lighter;
+            grid-column: span 3;
+            text-align: center;
+            color: #ec407a
+        }
+        
+        #wrapper {
+            display: grid;
+            grid-column: 3 / 11;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: minmax(auto, auto);
+            grid-row-gap: 10px;
+            margin-top: 3.6rem
+        }
+        
+        #clock-box,
+        #info {
+            grid-column: span 3;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr)
+        }
+        
+        #clock-box #clock {
+            grid-column: 4 / 10;
+            background-color: #F8C8C8;
+            padding: .6rem 2rem;
+            padding-top: .8rem;
+            text-align: center;
+            font-size: 2.4rem;
+            border-radius: 10rem
+        }
+        
+        date,
+        time {
+            display: block
+        }
+        
+        date {
+            font-size: 18px
+        }
+        
+        time {
+            font-family: "Arial", sans-serif;
+            line-height: 3.2rem;
+            letter-spacing: 2px
+        }
+        
+        .avt {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, .2)
+        }
+        
+        #info {
+            margin-top: 2.6rem
+        }
+        
+        #heart {
+            grid-column: span 2;
+            display: grid;
+            grid-template-rows: 2;
+            font-size: 44px;
+            color: #b90d46;
+            align-self: center;
+            padding-bottom: 2.6rem;
+            text-align: center
+        }
+        
+        anni {
+            font-size: 16px;
+            letter-spacing: .2px
+        }
+        
+        #info .one {
+            grid-column: 3 / 6;
+            text-align: center
+        }
+        
+        #info .two {
+            grid-column: 8 / 11;
+            text-align: center
+        }
+        
+        footer {
+            grid-column: span 3;
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: lighter;
+            margin-top: 1.2rem
+        }
+        
+        #music {
+            grid-column: 2;
+            position: relative;
+            z-index: 1000;
+            opacity: .4
+        }
+        
+        #mask {
+            background-image: linear-gradient(to top, #6d44cc5d 0%, #f09cd880 100%);
+            opacity: .42;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0
+        }
+        
+        @media (max-width: 992px) {
+            #wrapper {
+                grid-column: span 12
+            }
+            #clock-box #clock {
+                grid-column: 2 / 12
+            }
+            .avt {
+                width: 120px;
+                height: 120px
+            }
+            #info .one,
+            #info .two {
+                grid-column: span 12
+            }
+            #heart {
+                grid-column: span 12;
+                padding-bottom: 1rem
+            }
+            footer {
+                font-size: 1.2rem;
+                margin: 0;
+                padding-bottom: 2rem
+            }
+        }
+        
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #F0BBCB;
+            z-index: 1000
+        }
+        
+        .spinner {
+            position: fixed;
+            width: 100%;
+            top: 70%;
+            height: 30px;
+            text-align: center;
+            font-size: 10px
+        }
+        
+        .spinner,
+        .spinner-inner {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            border: 9px solid white;
+            border-color: transparent white;
+            margin: auto
+        }
+        
+        .spinner {
+            width: 85px;
+            height: 85px;
+            -webkit-animation: spin 2.2s linear 0s infinite normal;
+            -moz-animation: spin 2.2s linear 0s infinite normal;
+            animation: spin 2.2s linear 0s infinite normal
+        }
+        
+        .spinner-inner {
+            width: 40px;
+            height: 40px;
+            -webkit-animation: spinback 1.2s linear 0s infinite normal;
+            -moz-animation: spinback 1.2s linear 0s infinite normal;
+            animation: spinback 1.2s linear 0s infinite normal
+        }
+        
+        @-webkit-keyframes spin {
+            from {
+                -webkit-transform: rotate(0)
+            }
+            to {
+                -webkit-transform: rotate(360deg)
+            }
+        }
+        
+        @-moz-keyframes spin {
+            from {
+                -moz-transform: rotate(0)
+            }
+            to {
+                -moz-transform: rotate(360deg)
+            }
+        }
+        
+        @keyframes spin {
+            from {
+                transform: rotate(0)
+            }
+            to {
+                transform: rotate(360deg)
+            }
+        }
+        
+        @-webkit-keyframes spinback {
+            from {
+                -webkit-transform: rotate(0)
+            }
+            to {
+                -webkit-transform: rotate(-360deg)
+            }
+        }
+        
+        @-moz-keyframes spinback {
+            from {
+                -moz-transform: rotate(0)
+            }
+            to {
+                -moz-transform: rotate(-360deg)
+            }
+        }
+        
+        @keyframes spinback {
+            from {
+                transform: rotate(0)
+            }
+            to {
+                transform: rotate(-360deg)
+            }
+        }
+    </style>
+    <!-- Thư viện SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+    <style>
+        .--savior-overlay-transform-reset {
+            transform: none !important;
+        }
+        
+        .--savior-overlay-z-index-top {
+            z-index: 2147483643 !important;
+        }
+        
+        .--savior-overlay-position-relative {
+            position: relative;
+        }
+        
+        .--savior-overlay-overflow-hidden {
+            overflow: hidden !important;
+        }
+        
+        .--savior-overlay-overflow-x-visible {
+            overflow-x: visible !important;
+        }
+        
+        .--savior-overlay-overflow-y-visible {
+            overflow-y: visible !important;
+        }
+        
+        .--savior-overlay-z-index-reset {
+            z-index: auto !important;
+        }
+        
+        .--savior-overlay-display-none {
+            display: none !important;
+        }
+        
+        .--savior-overlay-clearfix {
+            clear: both;
+        }
+        
+        .--savior-overlay-reset-filter {
+            filter: none !important;
+            backdrop-filter: none !important;
+        }
+        
+        .--savior-tooltip-host {
+            z-index: 9999;
+            position: absolute;
+            top: 0;
+        }
+        /*Override css styles for Twitch.tv*/
+        
+        main.--savior-overlay-z-index-reset {
+            z-index: auto !important;
+        }
+        
+        main.--savior-overlay-z-index-top {
+            z-index: auto !important;
+        }
+        
+        main.--savior-overlay-z-index-top .channel-root__player-container+div,
+        main.--savior-overlay-z-index-top .video-player-hosting-ui__container+div {
+            opacity: 0.1;
+        }
+        /*Dirty hack for facebook big video page e.g: https://www.facebook.com/abc/videos/...*/
+        
+        .--savior-backdrop {
+            position: fixed !important;
+            z-index: 2147483642 !important;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw !important;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .--savior-overlay-twitter-video-player {
+            position: fixed;
+            width: 80%;
+            height: 80%;
+            top: 10%;
+            left: 10%;
+        }
+        /* Fix conflict css with zingmp3 */
+        
+        .zm-video-modal.--savior-overlay-z-index-reset {
+            position: absolute;
+        }
+        /* Dirty hack for xvideos99 */
+        
+        #page #main.--savior-overlay-z-index-reset {
+            z-index: auto !important;
+        }
+        /* Overlay for ok.ru */
+        
+        #vp_w.--savior-overlay-z-index-reset.media-layer.media-layer__video {
+            position: absolute;
+            overflow-y: hidden;
+        }
+        /* Fix missing controller for tv.naver.com */
+        
+        .--savior-overlay-z-index-top.rmc_controller,
+        .--savior-overlay-z-index-top.rmc_setting_intro,
+        .--savior-overlay-z-index-top.rmc_highlight,
+        .--savior-overlay-z-index-top.rmc_control_settings {
+            z-index: 2147483644 !important;
+        }
+        /* Dirty hack for douyi.com */
+        
+        .swiper-wrapper.--savior-overlay-z-index-reset .swiper-slide:not(.swiper-slide-active),
+        .swiper-wrapper.--savior-overlay-transform-reset .swiper-slide:not(.swiper-slide-active) {
+            display: none;
+        }
+        
+        .videoWrap+div>div {
+            pointer-events: unset;
+        }
+        /* Dirty hack for fpt.ai */
+        
+        .mfp-wrap.--savior-overlay-z-index-top {
+            position: relative;
+        }
+        
+        .mfp-wrap.--savior-overlay-z-index-top .mfp-close {
+            display: none;
+        }
+        
+        .mfp-wrap.--savior-overlay-z-index-top .mfp-content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset+nav {
+            z-index: -1 !important;
+        }
+        
+        section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset section.--savior-overlay-z-index-reset div.--savior-overlay-z-index-reset~div {
+            position: relative;
+        }
+        
+        div[class^="tiktok"].--savior-overlay-z-index-reset {
+            z-index: 2147483644 !important;
+        }
+        
+        @-moz-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @-o-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        /* Hàm hình nền */
+        /* body {
   background-image: url("https://i.imgur.com/pg6WLje.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; */
-}
-  </style>
-    </head>
-   
+    </style>
+</head>
+
 <body onkeydown="return false">
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      Swal.fire({
-        title: 'Welcome to my Inlove💞!',
-        text: 'Chào mừng bạn đã ghé qua Inlove của bọn mình!!',
-        icon: 'success',
-        confirmButtonText: 'Đóng',
-      });
-    });
-  </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                title: 'Welcome to my Inlove💞!',
+                text: 'Chào mừng bạn đã ghé qua Inlove của bọn mình!!',
+                icon: 'success',
+                confirmButtonText: 'Đóng',
+                onClose: playMusic
+            });
+        });
+    </script>
 
-        <div id='wrapper'>
-<h1>𝑫𝒂𝒚𝒔 𝑳𝒐𝒗𝒆</h1>
-<div id='clock-box'>
-<div id='clock'>
-<date>525 DAYS</date>
-<time>00:00:00</time>
-</div>
-</div>
-<footer><div id="countdown"></div></footer>
-  <script>
-    // Token của bot Telegram
-const botToken = '6716872901:AAH7p3UcynOqmf1cy8sAL8D2iHceSEgJtCM';
+    <div id='wrapper'>
+        <h1>𝑫𝒂𝒚𝒔 𝑳𝒐𝒗𝒆</h1>
+        <div id='clock-box'>
+            <div id='clock'>
+                <date>525 DAYS</date>
+                <time>00:00:00</time>
+            </div>
+        </div>
+        <footer>
+            <div id="countdown"></div>
+        </footer>
+        <script>
+            // Token của bot Telegram
+            const botToken = '6716872901:AAH7p3UcynOqmf1cy8sAL8D2iHceSEgJtCM';
 
-// Ngày kỷ niệm (định dạng: yyyy-mm-dd)
-const anniversaryDate = new Date("2032-05-09");
+            // Ngày kỷ niệm (định dạng: yyyy-mm-dd)
+            const anniversaryDate = new Date("2032-05-09");
 
-// Hàm tính số ngày còn lại
-function countdown() {
-  const currentDate = new Date();
-  const timeDifference = anniversaryDate.getTime() - currentDate.getTime();
-  const daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+            // Hàm tính số ngày còn lại
+            function countdown() {
+                const currentDate = new Date();
+                const timeDifference = anniversaryDate.getTime() - currentDate.getTime();
+                const daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
 
-  // Hiển thị số ngày còn lại trên trang web
-  const countdownElement = document.getElementById("countdown");
-  countdownElement.innerHTML = "Countdown " + daysRemaining + " days";
+                // Hiển thị số ngày còn lại trên trang web
+                const countdownElement = document.getElementById("countdown");
+                countdownElement.innerHTML = "Countdown " + daysRemaining + " days";
 
-  // Gửi thông điệp đến Telegram
-  if (daysRemaining === 0) {
-    sendMessageToTelegram("Hôm nay là ngày kỷ niệm! Chúc mừng!!");
-  } else {
-    sendMessageToTelegram(`💝💞🎉 𝑻𝒆̀𝒏 𝒕𝒆𝒏️ 🎉💞💝 \n🕒𝐕𝐚̣̂𝐲 𝐥𝐚̀ 𝐜𝐡𝐢̉ 𝐜𝐨̀𝐧 ${daysRemaining} 𝐧𝐠𝐚̀𝐲 𝐧𝐮̛̃𝐚 𝐭𝐡𝐨̂𝐢 𝐥𝐚̀ 𝐭𝐨̛́𝐢 𝐖𝐞𝐝𝐝𝐢𝐧𝐠 𝐃𝐚𝐲 𝐜𝐮̉𝐚 𝟐 đ𝐮̛́𝐚 𝐫𝐮̀𝐢 𝐧𝐞̀! \n🍀𝐂𝐡𝐮́𝐜 𝐜𝐡𝐨 𝟐 𝐭𝐚 𝐥𝐮𝐨̂𝐧 𝐭𝐡𝐚̣̂𝐭 𝐛𝐢̀𝐧𝐡 𝐚𝐧 𝐭𝐫𝐨𝐧𝐠 𝐜𝐮𝐨̣̂𝐜 𝐬𝐨̂́𝐧𝐠, 𝐥𝐮𝐨̂𝐧 𝐭𝐡𝐚̣̂𝐭 𝐯𝐮𝐢 𝐭𝐮̛𝐨̛𝐢, 𝐲𝐞̂𝐮 đ𝐨̛̀𝐢 𝐯𝐚̀ 𝐲𝐞̂𝐮 𝐧𝐡𝐚𝐮 𝐭𝐡𝐚̣̂𝐭 𝐧𝐡𝐢𝐞̂̀𝐮 𝐪𝐮𝐚 𝐭𝐮̛̀𝐧𝐠 𝐧𝐠𝐚̀𝐲 𝐧𝐡𝐚𝐚𝐚👉👈💖💞💑 \n\n    𝑰 𝑳𝒐𝒗𝒆 𝒀𝒐𝒖 𝑺𝒐 𝑴𝒖𝒄𝒉💖`);
-  }
+                // Gửi thông điệp đến Telegram
+                if (daysRemaining === 0) {
+                    sendMessageToTelegram("Hôm nay là ngày kỷ niệm! Chúc mừng!!");
+                } else {
+                    sendMessageToTelegram(`💝💞🎉 𝑻𝒆̀𝒏 𝒕𝒆𝒏️ 🎉💞💝 \n🕒𝐕𝐚̣̂𝐲 𝐥𝐚̀ 𝐜𝐡𝐢̉ 𝐜𝐨̀𝐧 ${daysRemaining} 𝐧𝐠𝐚̀𝐲 𝐧𝐮̛̃𝐚 𝐭𝐡𝐨̂𝐢 𝐥𝐚̀ 𝐭𝐨̛́𝐢 𝐖𝐞𝐝𝐝𝐢𝐧𝐠 𝐃𝐚𝐲 𝐜𝐮̉𝐚 𝟐 đ𝐮̛́𝐚 𝐫𝐮̀𝐢 𝐧𝐞̀! \n🍀𝐂𝐡𝐮́𝐜 𝐜𝐡𝐨 𝟐 𝐭𝐚 𝐥𝐮𝐨̂𝐧 𝐭𝐡𝐚̣̂𝐭 𝐛𝐢̀𝐧𝐡 𝐚𝐧 𝐭𝐫𝐨𝐧𝐠 𝐜𝐮𝐨̣̂𝐜 𝐬𝐨̂́𝐧𝐠, 𝐥𝐮𝐨̂𝐧 𝐭𝐡𝐚̣̂𝐭 𝐯𝐮𝐢 𝐭𝐮̛𝐨̛𝐢, 𝐲𝐞̂𝐮 đ𝐨̛̀𝐢 𝐯𝐚̀ 𝐲𝐞̂𝐮 𝐧𝐡𝐚𝐮 𝐭𝐡𝐚̣̂𝐭 𝐧𝐡𝐢𝐞̂̀𝐮 𝐪𝐮𝐚 𝐭𝐮̛̀𝐧𝐠 𝐧𝐠𝐚̀𝐲 𝐧𝐡𝐚𝐚𝐚👉👈💖💞💑 \n\n    𝑰 𝑳𝒐𝒗𝒆 𝒀𝒐𝒖 𝑺𝒐 𝑴𝒖𝒄𝒉💖`);
+                }
 
-  // Cập nhật lại số ngày còn lại sau mỗi ngày (86400000 milliseconds = 1 ngày)
-  setTimeout(countdown, 86400000);
-}
+                // Cập nhật lại số ngày còn lại sau mỗi ngày (86400000 milliseconds = 1 ngày)
+                setTimeout(countdown, 86400000);
+            }
 
-// Hàm gửi thông điệp đến bot Telegram
-function sendMessageToTelegram(message) {
-  fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      chat_id: '-4117462792',
-      text: message,
-    }),
-  })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Thông điệp đã được gửi thành công:', data);
-    })
-    .catch(error => {
-      console.error('Lỗi khi gửi thông điệp:', error);
-    });
+            // Hàm gửi thông điệp đến bot Telegram
+            function sendMessageToTelegram(message) {
+                fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            chat_id: '-4117462792',
+                            text: message,
+                        }),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Thông điệp đã được gửi thành công:', data);
+                    })
+                    .catch(error => {
+                        console.error('Lỗi khi gửi thông điệp:', error);
+                    });
 
-}
+            }
 
-// Gọi hàm countdown để bắt đầu đếm ngược
-countdown();
-  </script>
-<div id='info'>
-<div class='one'>
-<img class='avt' src='https://i.imgur.com/rKzYwkT.jpg'/>
-<p>𝑵𝒈𝒖𝒚𝒆𝒏 𝑽𝒂𝒏 𝑷𝒉𝒐𝒏𝒈</p>
-</div>
-<div id='heart'>
-                        &#10084;<anni>...</anni>
-</div>
-<div class='two'>
-<img class='avt' src='https://i.imgur.com/ekdBzCC.jpg'/>
-<p>𝑫𝒐 𝑻𝒉𝒊 𝒀𝒆𝒏 𝑵𝒉𝒊</p>
-</div>
-</div>
-<div id='music'>
-<audio autoplay='' controls='' loop=''>Your browser does not support the audio element.</audio>
-</div>
-         
-<footer>𝐓𝐡𝐚𝐧𝐤 𝐲𝐨𝐮 𝐟𝐨𝐫 𝐜𝐨𝐦𝐢𝐧𝐠 𝐭𝐨 𝐦𝐞</footer>
-</div>
-<script type='text/javascript'>//<![CDATA[
-            // Thay đổi ngày bắt đầu đếm tại đây - cấu trúc => YYYY/MM/DD
-            const yourDate = new Date("2022-01-02T00:00:00"),
+            // Gọi hàm countdown để bắt đầu đếm ngược
+            countdown();
+        </script>
+        <div id='info'>
+            <div class='one'>
+                <img class='avt' src='https://i.imgur.com/rKzYwkT.jpg' />
+                <p>𝑵𝒈𝒖𝒚𝒆𝒏 𝑽𝒂𝒏 𝑷𝒉𝒐𝒏𝒈</p>
+            </div>
+            <div id='heart'>
+                &#10084;
+                <anni>...</anni>
+            </div>
+            <div class='two'>
+                <img class='avt' src='https://i.imgur.com/ekdBzCC.jpg' />
+                <p>𝑫𝒐 𝑻𝒉𝒊 𝒀𝒆𝒏 𝑵𝒉𝒊</p>
+            </div>
+        </div>
+        <div id='music'>
+            <audio autoplay='' controls='' loop=''>Your browser does not support the audio element.</audio>
+        </div>
+
+        <footer>𝐓𝐡𝐚𝐧𝐤 𝐲𝐨𝐮 𝐟𝐨𝐫 𝐜𝐨𝐦𝐢𝐧𝐠 𝐭𝐨 𝐦𝐞</footer>
+    </div>
+    <script type='text/javascript'>
+        //<![CDATA[
+        // Thay đổi ngày bắt đầu đếm tại đây - cấu trúc => YYYY/MM/DD
+        const yourDate = new Date("2022-01-02T00:00:00"),
             // Thay đổi bài hát tại đây
             music = ['anh_thanh_nien', 'co_gai_m52', 'cung_nhau_dong_bang', 'hoa_co_lau', 'khuat_loi', 'la_anh', 'roi_toi_luon', 'tuong_quan', 'xin_ma_ruoc_dau', 'banh_mi_khong'];
-            document.addEventListener('DOMContentLoaded', function() {
-                var rootTime = document.querySelector("time");
-                document.querySelector("anni").textContent = `${(yourDate.getDate()>9)?yourDate.getDate():"0"+yourDate.getDate()}-${(yourDate.getMonth()>8)?(yourDate.getMonth()+1):"0"+(yourDate.getMonth()+1)}-${yourDate.getFullYear()}`;
-                document.querySelector("date").textContent = Math.floor(Math.floor((new Date() - yourDate) / 1000) / 60 / 60 / 24) + " DAYS";
-                function olock() {
-                    var today = new Date(),
-                        hrs = (Math.floor(Math.floor((today - yourDate) / 1000) / 60 / 60)) % 24,
-                        min = (Math.floor(Math.floor((today - yourDate) / 1000) / 60)) % 60,
-                        sec = Math.floor((today - yourDate) / 1000) % 60;
-                    rootTime.textContent = `${(hrs>9)?hrs:"0"+hrs}:${(min>9)?min:"0"+min}:${(sec>9)?sec:"0"+sec}`;
-                }
-                olock();
-                var timer = setInterval(function() {
-                    olock()
-                }, 1000);
-                //Thay đổi link ramdom bài hát tại đây
-                document.querySelector("audio").setAttribute("src", `https://gio2k45.github.io/Inlove/${music[Math.floor(Math.random()*music.length)]}.mp3`);
-                document.getElementsByTagName("body")[0].insertAdjacentHTML(
-                    "beforeend",
-                    "<div id='mask'></div>"
-                );
-            }, false);
+
+        function playMusic() {
+            document.querySelector("audio").play();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var rootTime = document.querySelector("time");
+            document.querySelector("anni").textContent = `${(yourDate.getDate()>9)?yourDate.getDate():"0"+yourDate.getDate()}-${(yourDate.getMonth()>8)?(yourDate.getMonth()+1):"0"+(yourDate.getMonth()+1)}-${yourDate.getFullYear()}`;
+            document.querySelector("date").textContent = Math.floor(Math.floor((new Date() - yourDate) / 1000) / 60 / 60 / 24) + " DAYS";
+
+            function olock() {
+                var today = new Date(),
+                    hrs = (Math.floor(Math.floor((today - yourDate) / 1000) / 60 / 60)) % 24,
+                    min = (Math.floor(Math.floor((today - yourDate) / 1000) / 60)) % 60,
+                    sec = Math.floor((today - yourDate) / 1000) % 60;
+                rootTime.textContent = `${(hrs>9)?hrs:"0"+hrs}:${(min>9)?min:"0"+min}:${(sec>9)?sec:"0"+sec}`;
+            }
+            olock();
+            var timer = setInterval(function() {
+                olock()
+            }, 1000);
+            //Thay đổi link ramdom bài hát tại đây
+            document.querySelector("audio").setAttribute("src", `https://gio2k45.github.io/Inlove/${music[Math.floor(Math.random()*music.length)]}.mp3`);
+            document.getElementsByTagName("body")[0].insertAdjacentHTML(
+                "beforeend",
+                "<div id='mask'></div>"
+            );
+        }, false);
         //]]>
-</script>
-    
-<!-- loading -->
-<!-- <div id='loader'>
+    </script>
+
+    <!-- loading -->
+    <!-- <div id='loader'>
 <div class='spinner'>
 <div class='spinner-inner'></div>
 </div>
@@ -319,55 +624,57 @@ countdown();
                 }, 1000)
             });
         </script> -->
-<!-- Code chống chuột phải -->
-<script type='text/javascript'>
-    var message = "NoRightClicking";
-    function defeatIE() {
-        if (document.all) {
-            (message);
-            return false;
-        }
-    }
-    function defeatNS(e) {
-        if (document.layers || (document.getElementById && !document.all)) {
-            if (e.which == 2 || e.which == 3) {
+    <!-- Code chống chuột phải -->
+    <script type='text/javascript'>
+        var message = "NoRightClicking";
+
+        function defeatIE() {
+            if (document.all) {
                 (message);
                 return false;
             }
         }
-    }
-    if (document.layers) {
-        document.captureEvents(Event.MOUSEDOWN);
-        document.onmousedown = defeatNS;
-    } else {
-        document.onmouseup = defeatNS;
-        document.oncontextmenu = defeatIE;
-    }
-    document.oncontextmenu = new Function("return false")
-</script>
 
-<!-- Code chống ctrl U và f12 -->
-<script type='text/javascript'>
-    checkCtrl = false $('*').keydown(function(e) {
-        if (e.keyCode == '17') {
-            checkCtrl = false
-        }
-    }).keyup(function(ev) {
-        if (ev.keyCode == '17') {
-            checkCtrl = false
-        }
-    }).keydown(function(event) {
-        if (checkCtrl) {
-            if (event.keyCode == '85') {
-                return false;
+        function defeatNS(e) {
+            if (document.layers || (document.getElementById && !document.all)) {
+                if (e.which == 2 || e.which == 3) {
+                    (message);
+                    return false;
+                }
             }
         }
-    })
-</script>
-    
-<!--  Hiệu ứng tuyết rơi -->
-<!-- <div class="snowflakes" aria-hidden="true">
-  <!--     <div class="snowflake">❅</div>
+        if (document.layers) {
+            document.captureEvents(Event.MOUSEDOWN);
+            document.onmousedown = defeatNS;
+        } else {
+            document.onmouseup = defeatNS;
+            document.oncontextmenu = defeatIE;
+        }
+        document.oncontextmenu = new Function("return false")
+    </script>
+
+    <!-- Code chống ctrl U và f12 -->
+    <script type='text/javascript'>
+        checkCtrl = false $('*').keydown(function(e) {
+            if (e.keyCode == '17') {
+                checkCtrl = false
+            }
+        }).keyup(function(ev) {
+            if (ev.keyCode == '17') {
+                checkCtrl = false
+            }
+        }).keydown(function(event) {
+            if (checkCtrl) {
+                if (event.keyCode == '85') {
+                    return false;
+                }
+            }
+        })
+    </script>
+
+    <!--  Hiệu ứng tuyết rơi -->
+    <!-- <div class="snowflakes" aria-hidden="true">
+      <div class="snowflake">❅</div>
   <div class="snowflake">🌸</div>
   <div class="snowflake">🏵️</div>
 <div class="snowflake">❆</div>
@@ -454,7 +761,7 @@ countdown();
   }
 </style>
  -->
- 
-    </body>
-    
+
+</body>
+
 </html>
